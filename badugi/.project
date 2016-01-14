@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>badugi</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.maven.ide.eclipse.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>badugi-game-proxy</name>
+			<type>2</type>
+			<location>C:/Users/wtuic/workspace/badugi-game-proxy</location>
+		</link>
+	</linkedResources>
+</projectDescription>

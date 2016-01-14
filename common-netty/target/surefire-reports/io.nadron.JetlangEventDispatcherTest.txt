@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: io.nadron.JetlangEventDispatcherTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.051 sec - in io.nadron.JetlangEventDispatcherTest
