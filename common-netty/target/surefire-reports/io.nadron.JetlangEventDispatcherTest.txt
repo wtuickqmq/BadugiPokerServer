@@ -1,4 +1,44 @@
 -------------------------------------------------------------------------------
 Test set: io.nadron.JetlangEventDispatcherTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.051 sec - in io.nadron.JetlangEventDispatcherTest
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in io.nadron.JetlangEventDispatcherTest
+nonReceiptOfWrongEventOnSpecificEventHandler(io.nadron.JetlangEventDispatcherTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import org.jetlang cannot be resolved
+	Disposable cannot be resolved to a type
+	The method getDisposableHandlerMap() from the type JetlangEventDispatcher refers to the missing type Disposable
+
+	at io.nadron.JetlangEventDispatcherTest.<init>(JetlangEventDispatcherTest.java:32)
+
+specificEventReceiptOnSpecificEventHandler(io.nadron.JetlangEventDispatcherTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import org.jetlang cannot be resolved
+	Disposable cannot be resolved to a type
+	The method getDisposableHandlerMap() from the type JetlangEventDispatcher refers to the missing type Disposable
+
+	at io.nadron.JetlangEventDispatcherTest.<init>(JetlangEventDispatcherTest.java:32)
+
+eventReceiptOnANYTypeEventHandler(io.nadron.JetlangEventDispatcherTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import org.jetlang cannot be resolved
+	Disposable cannot be resolved to a type
+	The method getDisposableHandlerMap() from the type JetlangEventDispatcher refers to the missing type Disposable
+
+	at io.nadron.JetlangEventDispatcherTest.<init>(JetlangEventDispatcherTest.java:32)
+
+sessionDisconnectValidation(io.nadron.JetlangEventDispatcherTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import org.jetlang cannot be resolved
+	Disposable cannot be resolved to a type
+	The method getDisposableHandlerMap() from the type JetlangEventDispatcher refers to the missing type Disposable
+
+	at io.nadron.JetlangEventDispatcherTest.<init>(JetlangEventDispatcherTest.java:32)
+
+multiSessionDisconnectValidation(io.nadron.JetlangEventDispatcherTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import org.jetlang cannot be resolved
+	Disposable cannot be resolved to a type
+	The method getDisposableHandlerMap() from the type JetlangEventDispatcher refers to the missing type Disposable
+
+	at io.nadron.JetlangEventDispatcherTest.<init>(JetlangEventDispatcherTest.java:32)
+

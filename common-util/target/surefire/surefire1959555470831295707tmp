@@ -1,0 +1,28 @@
+#surefire
+#Thu Jan 14 09:23:27 CST 2016
+testClassesDirectory=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\target\\test-classes
+classPathUrl.3=C\:\\Users\\wtuic\\.m2\\repository\\org\\hamcrest\\hamcrest-core\\1.1\\hamcrest-core-1.1.jar
+classPathUrl.2=C\:\\Users\\wtuic\\.m2\\repository\\junit\\junit\\4.10\\junit-4.10.jar
+useManifestOnlyJar=true
+classPathUrl.1=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\target\\classes
+reportsDirectory=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\target\\surefire-reports
+classPathUrl.0=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\target\\test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit4.JUnit4Provider
+testSuiteDefinitionTestSourceDirectory=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Users\\wtuic\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-api\\2.7.1\\surefire-api-2.7.1.jar
+surefireClassPathUrl.0=C\:\\Users\\wtuic\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-junit4\\2.7.1\\surefire-junit4-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=C\:\\work\\poker\\Badugi\\BadugiPokerServer\\common-util\\target\\test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+includes0=**/Test*.java
+childDelegation=false

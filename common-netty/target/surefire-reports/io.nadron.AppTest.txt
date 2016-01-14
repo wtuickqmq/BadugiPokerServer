@@ -1,4 +1,109 @@
 -------------------------------------------------------------------------------
 Test set: io.nadron.AppTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.476 sec - in io.nadron.AppTest
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE! - in io.nadron.AppTest
+readWriteSocketAddress(io.nadron.AppTest)  Time elapsed: 0.001 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import io.netty cannot be resolved
+	The import io.netty cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	Unpooled cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeSocketAddress(InetSocketAddress) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+
+	at io.nadron.AppTest.<init>(AppTest.java:5)
+
+nettyUtilStringWriteRead(io.nadron.AppTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import io.netty cannot be resolved
+	The import io.netty cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	Unpooled cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeSocketAddress(InetSocketAddress) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+
+	at io.nadron.AppTest.<init>(AppTest.java:5)
+
+readWriteEmptyString(io.nadron.AppTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import io.netty cannot be resolved
+	The import io.netty cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	Unpooled cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeSocketAddress(InetSocketAddress) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+
+	at io.nadron.AppTest.<init>(AppTest.java:5)
+
+nettyUtilVarArgsStringWriteRead(io.nadron.AppTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import io.netty cannot be resolved
+	The import io.netty cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	Unpooled cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeSocketAddress(InetSocketAddress) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+
+	at io.nadron.AppTest.<init>(AppTest.java:5)
+
+nettyUtilMultiStringWriteRead(io.nadron.AppTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.Error: Unresolved compilation problems: 
+	The import io.netty cannot be resolved
+	The import io.netty cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeString(String) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	Unpooled cannot be resolved
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeSocketAddress(InetSocketAddress) from the type NettyUtils refers to the missing type ByteBuf
+	ByteBuf cannot be resolved to a type
+	The method writeStrings(String...) from the type NettyUtils refers to the missing type ByteBuf
+
+	at io.nadron.AppTest.<init>(AppTest.java:5)
+

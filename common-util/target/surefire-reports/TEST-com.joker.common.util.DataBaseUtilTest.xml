@@ -1,66 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.joker.common.util.DataBaseUtilTest" time="0" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.joker.common.util.DataBaseUtilTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.40-b25"/>
-    <property name="gopherProxySet" value="false"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_66\bin"/>
+    <property name="java.vm.version" value="25.66-b18"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=":"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/GhostWtu/Documents/server/game/joker"/>
-    <property name="java.runtime.version" value="1.8.0_40-b27"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/qq/jzgx6p_j6g95f5m23ptl6klr0000gn/T/"/>
+    <property name="user.dir" value="C:\work\poker\Badugi\BadugiPokerServer\common-util"/>
+    <property name="java.runtime.version" value="1.8.0_66-b18"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\work\poker\Badugi\BadugiPokerServer\common-util"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jre1.8.0_66\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="C:\work\poker\Badugi\BadugiPokerServer\common-util\target\surefire\surefirebooter7328058787577376807.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\wtuic\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/GhostWtu/Documents/workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf2874702384561569357.tmp"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/GhostWtu/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jre1.8.0_66\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_66/bin/server;C:/Program Files/Java/jre1.8.0_66/bin;C:/Program Files/Java/jre1.8.0_66/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Users\wtuic\AppData\Roaming\搜狐影音\5.0.2.5;C:\开发工具\eclipse;;."/>
+    <property name="surefire.test.class.path" value="C:\work\poker\Badugi\BadugiPokerServer\common-util\target\test-classes;C:\work\poker\Badugi\BadugiPokerServer\common-util\target\classes;C:\Users\wtuic\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\wtuic\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.10.5"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/GhostWtu"/>
-    <property name="user.timezone" value="Asia/Shanghai"/>
-    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\wtuic"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="GhostWtu"/>
-    <property name="java.class.path" value="/Users/GhostWtu/我的软件/eclipse-java/plugins/org.eclipse.m2e.maven.runtime_1.5.0.20140605-2032/jars/plexus-classworlds-2.5.1.jar"/>
-    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="user.name" value="wtuickqmq"/>
+    <property name="java.class.path" value="C:\work\poker\Badugi\BadugiPokerServer\common-util\target\test-classes;C:\work\poker\Badugi\BadugiPokerServer\common-util\target\classes;C:\Users\wtuic\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\wtuic\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.home" value="C:\Program Files\Java\jre1.8.0_66"/>
+    <property name="sun.java.command" value="C:\work\poker\Badugi\BadugiPokerServer\common-util\target\surefire\surefirebooter7328058787577376807.jar C:\work\poker\Badugi\BadugiPokerServer\common-util\target\surefire\surefire710163539099355299tmp C:\work\poker\Badugi\BadugiPokerServer\common-util\target\surefire\surefire5904666178142530909tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="zh"/>
-    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_40"/>
-    <property name="java.ext.dirs" value="/Users/GhostWtu/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/classes"/>
+    <property name="java.version" value="1.8.0_66"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jre1.8.0_66\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_66\lib\resources.jar;C:\Program Files\Java\jre1.8.0_66\lib\rt.jar;C:\Program Files\Java\jre1.8.0_66\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_66\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_66\lib\jce.jar;C:\Program Files\Java\jre1.8.0_66\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_66\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_66\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/GhostWtu/Documents/server/game/joker/EMBEDDED"/>
-    <property name="file.separator" value="/"/>
+    <property name="localRepository" value="C:\Users\wtuic\.m2\repository"/>
+    <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="com.joker.common.util.DataBaseUtilTest" name="test" time="0"/>
 </testsuite>

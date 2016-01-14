@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="io.nadron.protocols.impl.AMF3ProtocolTest" time="0" tests="1" errors="1" skipped="0" failures="0">
+<testsuite name="io.nadron.app.impl.PlayerSessionWithEventDispatcherTest" time="0.003" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_66\bin"/>
@@ -59,8 +59,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="initializationError" classname="io.nadron.protocols.impl.AMF3ProtocolTest" time="0">
-    <error message="LLengthFieldBasedFrameDecoder;" type="java.lang.NoClassDefFoundError"><![CDATA[java.lang.NoClassDefFoundError: LLengthFieldBasedFrameDecoder;
+  <testcase name="initializationError" classname="io.nadron.app.impl.PlayerSessionWithEventDispatcherTest" time="0.003">
+    <error message="LAtomicLong;" type="java.lang.NoClassDefFoundError"><![CDATA[java.lang.NoClassDefFoundError: LAtomicLong;
 	at java.lang.Class.getDeclaredFields0(Native Method)
 	at java.lang.Class.privateGetDeclaredFields(Unknown Source)
 	at java.lang.Class.getDeclaredFields(Unknown Source)
@@ -85,7 +85,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: java.lang.ClassNotFoundException: LengthFieldBasedFrameDecoder
+Caused by: java.lang.ClassNotFoundException: AtomicLong
 	at java.net.URLClassLoader.findClass(Unknown Source)
 	at java.lang.ClassLoader.loadClass(Unknown Source)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)

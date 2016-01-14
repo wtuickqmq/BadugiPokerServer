@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
-Test set: io.nadron.protocols.impl.MessageBufferProtocolTest
+Test set: io.nadron.app.impl.PlayerSessionWithEventDispatcherTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE! - in io.nadron.protocols.impl.MessageBufferProtocolTest
-initializationError(io.nadron.protocols.impl.MessageBufferProtocolTest)  Time elapsed: 0.001 sec  <<< ERROR!
-java.lang.NoClassDefFoundError: LLengthFieldBasedFrameDecoder;
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 sec <<< FAILURE! - in io.nadron.app.impl.PlayerSessionWithEventDispatcherTest
+initializationError(io.nadron.app.impl.PlayerSessionWithEventDispatcherTest)  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: LAtomicLong;
 	at java.lang.Class.getDeclaredFields0(Native Method)
 	at java.lang.Class.privateGetDeclaredFields(Unknown Source)
 	at java.lang.Class.getDeclaredFields(Unknown Source)
@@ -28,7 +28,7 @@ java.lang.NoClassDefFoundError: LLengthFieldBasedFrameDecoder;
 	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-Caused by: java.lang.ClassNotFoundException: LengthFieldBasedFrameDecoder
+Caused by: java.lang.ClassNotFoundException: AtomicLong
 	at java.net.URLClassLoader.findClass(Unknown Source)
 	at java.lang.ClassLoader.loadClass(Unknown Source)
 	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
