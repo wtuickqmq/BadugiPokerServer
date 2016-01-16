@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<import resource="beans-service.xml" />
+	<context:annotation-config />
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	                                    Codec
+		 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->	
+	<!-- Netty and decoders encoders and handlers -->
+	<bean id="stringDecoder" class="io.netty.handler.codec.string.StringDecoder" />
+	<bean id="stringMessageEncoder" class="io.netty.handler.codec.string.StringEncoder" />
+	<bean id="base64Decoder" class="io.netty.handler.codec.base64.Base64Decoder" />
+	<bean id="base64Encoder" class="io.netty.handler.codec.base64.Base64Encoder" />
+	<bean id="lengthFieldPrepender" class="io.netty.handler.codec.LengthFieldPrepender">
+		<constructor-arg type="int" index="0" value="2" />
+		<constructor-arg type="boolean" index="1" value="false" />
+	</bean>
+	<bean id="lengthFieldBasedFrameDecoder" class="io.netty.handler.codec.LengthFieldBasedFrameDecoder"
+		scope="prototype">
+		<constructor-arg type="int" index="0" value="4096" />
+		<constructor-arg type="int" index="1" value="0" />
+		<constructor-arg type="int" index="2" value="2" />
+		<constructor-arg type="int" index="3" value="0" />
+		<constructor-arg type="int" index="4" value="2" />
+	</bean>
+	
+	<!-- custom and decoders encoders and handlers -->
+	<bean id="nullEncoder" class="io.nadron.handlers.netty.NulEncoder" />
+	<bean id="eventDecoder" class="io.nadron.handlers.netty.EventDecoder" />
+	<bean id="eventEncoder" class="io.nadron.handlers.netty.EventEncoder" />
+	<bean id="messageBufferEventDecoder" class="io.nadron.handlers.netty.MessageBufferEventDecoder" />
+	<bean id="messageBufferEventEncoder" class="io.nadron.handlers.netty.MessageBufferEventEncoder" />
+	<bean id="udpEventEncoder" class="io.nadron.handlers.netty.UDPEventEncoder" />
+	<bean id="textWebsocketEncoder" class="io.nadron.handlers.netty.TextWebsocketEncoder">
+		<property name="jackson" ref="jackson" />
+	</bean>
+	<bean id="textWebsocketDecoder" class="io.nadron.handlers.netty.TextWebsocketDecoder">
+		<property name="jackson" ref="jackson" />
+	</bean>
+
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	                                    Handler
+		 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+	<bean id="loginHandler" class="io.nadron.handlers.netty.LoginHandler">
+		<property name="lookupService" ref="lookupService" />
+		<property name="udpSessionRegistry" ref="udpSessionRegistry" />
+		<property name="idGeneratorService" ref="simpleUniqueIdGenerator" />
+		<property name="reconnectRegistry" ref="reconnectSessionRegistry" />
+	</bean>
+	<bean id="webSocketLoginHandler" class="io.nadron.handlers.netty.WebSocketLoginHandler">
+		<property name="lookupService" ref="lookupService" />
+		<property name="idGeneratorService" ref="defaultUniqueIdGenerator" />
+		<property name="reconnectRegistry" ref="reconnectSessionRegistry" />
+		<property name="jackson" ref="jackson" />
+	</bean>
+	<bean id="stringLoginHandler" class="io.nadron.handlers.netty.StringLoginHandler">
+		<property name="lookupService" ref="lookupService" />
+		<property name="idGeneratorService" ref="defaultUniqueIdGenerator" />
+		<property name="reconnectRegistry" ref="reconnectSessionRegistry" />
+		<property name="jackson" ref="jackson" />
+	</bean>
+	<bean id="udpUpstreamHandler" class="io.nadron.handlers.netty.UDPUpstreamHandler">
+		<property name="udpSessionRegistry" ref="udpSessionRegistry" />
+		<property name="messageBufferEventDecoder" ref="messageBufferEventDecoder" />
+	</bean>
+	
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	                                Protocol
+		 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+	<bean id="stringProtocol" class="io.nadron.protocols.impl.StringProtocol">
+		<property name="frameSize" value="4096" />
+		<property name="nulEncoder" ref="nullEncoder" />
+		<property name="stringDecoder" ref="stringDecoder" />
+		<property name="stringEncoder" ref="stringMessageEncoder" />
+	</bean>
+	<bean id="channelBufferProtocol" class="io.nadron.protocols.impl.ChannelBufferProtocol">
+		<property name="eventDecoder" ref="eventDecoder" />
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+		<property name="eventEncoder" ref="eventEncoder" />
+	</bean>
+	
+	<bean id="messageBufferProtocol" class="io.nadron.protocols.impl.MessageBufferProtocol">
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+		<property name="messageBufferEventDecoder" ref="messageBufferEventDecoder" />
+		<property name="messageBufferEventEncoder" ref="messageBufferEventEncoder" />
+	</bean>
+	
+	<bean id="messageBufferProtocolWithTimeOut" class="io.nadron.protocols.impl.MessageBufferProtocol">
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+		<property name="messageBufferEventDecoder" ref="messageBufferEventDecoder" />
+		<property name="messageBufferEventEncoder" ref="messageBufferEventEncoder" />
+		<property name="readTimeOut" value="0" />
+		<property name="allTimeOut" value="0" />
+	</bean>
+	
+	<bean id="webSocketProtocol" class="io.nadron.protocols.impl.WebSocketProtocol">
+		<property name="textWebsocketDecoder" ref="textWebsocketDecoder" />
+		<property name="textWebsocketEncoder" ref="textWebsocketEncoder" />
+	</bean>
+	<bean id="nettyObjectProtocol" class="io.nadron.protocols.impl.NettyObjectProtocol">
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+	</bean>
+	<!-- Login Protocols these decide what handlers are in the pipeline during 
+		login of a client to server -->
+	<bean id="httpLoginProtocol" class="io.nadron.handlers.netty.HTTPProtocol">
+		<property name="webSocketLoginHandler" ref="webSocketLoginHandler" />
+	</bean>
+	<bean id="defaultLoginProtocol" class="io.nadron.handlers.netty.DefaultNadProtocol">
+		<property name="eventDecoder" ref="eventDecoder" />
+		<property name="loginHandler" ref="loginHandler" />
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+		<property name="eventEncoder" ref="eventEncoder" />
+	</bean>
+	<bean id="stringLoginProtocol" class="io.nadron.handlers.netty.DefaultStringProtocol">
+		<property name="stringLoginHandler" ref="stringLoginHandler" />
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+	</bean>
+	<bean id="defaultMessageBufferProtocol" class="io.nadron.handlers.netty.DefaultMessageBufferProtocol">
+		<property name="eventDecoder" ref="messageBufferEventDecoder" />
+		<property name="loginHandler" ref="loginHandler" />
+		<property name="lengthFieldPrepender" ref="lengthFieldPrepender" />
+	</bean>
+
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	                                Server
+		 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+	<bean id="tcpConfig" class="io.nadron.server.netty.NettyConfig">
+		<property name="channelOptions" ref="tcpChannelOptions" />
+		<property name="bossGroup" ref="bossGroup" />
+		<property name="workerGroup" ref="workerGroup" />
+		<property name="portNumber" value="${proxy.tcp.port}" />
+	</bean>
+	<bean id="flashConfig" class="io.nadron.server.netty.NettyConfig">
+		<property name="channelOptions" ref="tcpChannelOptions"/>
+		<property name="bossGroup" ref="bossGroup"/>
+		<property name="workerGroup" ref="workerGroup"/>
+		<property name="portNumber" value="${proxy.flash.policyport}"/>
+	</bean>
+	<bean id="udpConfig" class="io.nadron.server.netty.NettyConfig">
+		<property name="channelOptions" ref="udpChannelOptions" />
+		<property name="bossGroup" ref="bossGroup" />
+		<property name="portNumber" value="${proxy.udp.port}" />
+	</bean>
+	<bean id="httpConfig" class="io.nadron.server.netty.NettyConfig">
+		<property name="channelOptions" ref="httpChannelOptions" />
+		<property name="bossGroup" ref="bossGroup" />
+		<property name="workerGroup" ref="workerGroup" />
+		<property name="portNumber" value="${proxy.http.port}" />
+	</bean>
+</beans>

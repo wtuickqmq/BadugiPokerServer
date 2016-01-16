@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- configuration为根元素，包含三个属性: debug,指是否开启logback内部日志，没有设置此属性或设置其值为空、null或false时，表示不开启，否则，开启； 
+	scan,设置是否定时扫描配置文件 scanPeriod,设置扫描周期，与scan属性配合使用，默认是60000毫秒，如果该属性值没有带单位，则单位为毫秒，可带的单位有milli/millisecond/second/seconde/minute/hour/day，可忽略大小写 -->
+<configuration scan="true" scanPeriod="360 seconds" debug="false">
+	<!--日志文件的保存路径,首先查找系统属性-Dlog.dir,如果存在就使用其；否则，在当前目录下创建名为logs目录做日志存放的目录 -->
+	<property name="LOG_HOME" value="${log.dir:-target/logs}/" />
+	<!-- 日志保存数量 -->
+	<property name="MAX_HISTORY" value="${log.max.history:-300}" />
+	<!-- 单个文件最大 -->
+	<property name="MAX_FILESIZE" value="${log.max.filesize:-100MB}" />
+	<!-- 日志等级 -->
+	<property name="LOG_LEVEL" value="${log.level:-DEBUG}" />
+	<!-- 日志输出格式 -->
+	<property name="ENCODER_PATTERN"
+		value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger:%line %method - %msg%n" />
+
+	<!-- appender表示日志输出的方式，该元素必须包含name、classs属性; name，表示appender的唯一标识 class一般常见有ch.qos.logback.core.FileAppender、ch.qos.logback.core.rolling.RollingFileAppender、ch.qos.logback.core.ConsoleAppender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder charset="UTF-8">
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 错误日志文件 -->
+	<appender name="FILE_ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/ERROR/%d{HH}.log
+			</fileNamePattern>
+			<maxHistory>${MAX_HISTORY}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY </onMismatch>
+		</filter>
+	</appender>
+
+	<!-- 警告日志文件 -->
+	<appender name="FILE_WARN"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/WARN/%d{HH}.log
+			</fileNamePattern>
+			<maxHistory>${MAX_HISTORY}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY </onMismatch>
+		</filter>
+	</appender>
+
+	<!-- 信息日志文件 -->
+	<appender name="FILE_INFO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/INFO/%d{HH}.log
+			</fileNamePattern>
+			<maxHistory>${MAX_HISTORY}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY </onMismatch>
+		</filter>
+	</appender>
+
+	<!-- DEBUG日志文件 -->
+	<appender name="FILE_DEBUG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/DEBUG/%d{HH}.log
+			</fileNamePattern>
+			<maxHistory>${MAX_HISTORY}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>DEBUG</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY </onMismatch>
+		</filter>
+	</appender>
+
+	<!-- TRACE日志文件 -->
+	<appender name="FILE_TRACE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/TRACE/%d{HH}.log
+			</fileNamePattern>
+			<maxHistory>${MAX_HISTORY}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${ENCODER_PATTERN}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>TRACE</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY </onMismatch>
+		</filter>
+	</appender>
+
+	<!-- TRACE日志当文件超过${MAX_FILESIZE}采用自动压缩归档 -->
+	<!-- <appender name="FILE_TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
+		<File>${LOG_HOME}/TRACE/log.log</File> <encoder> <pattern>${ENCODER_PATTERN}</pattern> 
+		</encoder> <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy"> 
+		<FileNamePattern>${LOG_HOME}/TRACE/debug.%i.log.zip</FileNamePattern> <MinIndex>1</MinIndex> 
+		<MaxIndex>13</MaxIndex> </rollingPolicy> <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> 
+		<MaxFileSize>${MAX_FILESIZE}</MaxFileSize> </triggeringPolicy> <filter class="ch.qos.logback.classic.filter.LevelFilter"> 
+		<level>TRACE</level> <onMatch>ACCEPT</onMatch> <onMismatch>DENY </onMismatch> 
+		</filter> </appender> -->
+	<!-- 异步到数据库 <appender name="DB" class="ch.qos.logback.classic.db.DBAppender"> 
+		<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource"> 
+		<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource"> <driverClass>${jdbc.driverClass}</driverClass> 
+		<url>${jdbc.jdbcUrl}</url> <user>${dbc.user}</user> <password>${jdbc.password}</password> 
+		</dataSource> </connectionSource> </appender> -->
+
+	<!-- 日志默认输出级别为INFO -->
+	<root level="${LOG_LEVEL}">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE_ERROR" />
+		<appender-ref ref="FILE_WARN" />
+		<appender-ref ref="FILE_INFO" />
+		<appender-ref ref="FILE_DEBUG" />
+		<appender-ref ref="FILE_TRACE" />
+	</root>
+
+	<!-- 日志过滤 -->
+	<logger name="org.quartz" level="WARN" />
+	<!-- 	
+	<logger name="com.yxpai.game.naruto" level="INFO" />
+	<logger name="com.yxpai.game.sword.task" level="INFO" />
+	<logger name="com.yxpai.game.sword.dao.hibernate" level="WARN" /> 
+	-->
+	<logger name="com.yxpai.game.naruto.rpc.handlers.ClientSessionHandler" level="DEBUG" >
+	</logger>
+<!-- 	<logger name="com.yxpai.game.naruto.util.ChannelUtil" level="DEBUG" >
+	</logger> -->
+	<logger name="com.yxpai.game.naruto.service.impl.PingServiceImpl" level="DEBUG" >
+	</logger>
+	
+	<logger name="com.erayt" level="INFO" />
+	<logger name="com.mchange" level="WARN" />
+	<logger name="com.erayt.solar2" level="DEBUG" />
+	<logger name="com.googlecode" level="WARN" />
+	<logger name="com.ibatis" level="WARN" />
+	<logger name="com.opensymphony" level="WARN" />
+	<logger name="com.opensymphony.xwork2" level="WARN" />
+	<logger name="net.sf" level="WARN" />
+	<logger name="org.apache" level="INFO" />
+	<logger name="org.apache.struts2" level="WARN" />
+	<logger name="org.codehaus" level="WARN" />
+	<logger name="org.jgroups" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="java.sql.Connection" level="WARN" />
+	<logger name="java.sql.PreparedStatement" level="WARN" />
+	<logger name="java.sql.ResultSet" level="WARN" />
+	<logger name="io.netty" level="WARN" />
+	<logger name="org.jboss.logging" level="WARN" />
+	<logger name="ch.qos" level="ERROR" />
+	<!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+		level="ERROR" />
+	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor"
+		level="ERROR" />
+	<logger name="org.hibernate.SQL" level="ERROR" />
+	<logger name="org.hibernate.engine.QueryParameters" level="ERROR" />
+	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="ERROR" />
+	<logger name="org.hibernate" level="ERROR" />
+
+</configuration>

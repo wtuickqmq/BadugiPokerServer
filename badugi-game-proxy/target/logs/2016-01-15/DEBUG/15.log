@@ -1,0 +1,51 @@
+2016-01-15 15:17:00.806 [Server-Worker[7]] DEBUG io.nadron.handlers.netty.LoginHandler:260 handleGameRoomJoin - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xbc1e44be, /127.0.0.1:49893 => /127.0.0.1:20001], result DefaultChannelPromise@60dcecbb(success)
+2016-01-15 15:17:00.808 [Server-Worker[7]] DEBUG io.nadron.handlers.netty.LoginHandler:293 operationComplete - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xbc1e44be, /127.0.0.1:49893 => /127.0.0.1:20001] completed
+2016-01-15 15:17:00.808 [Server-Worker[7]] DEBUG io.nadron.handlers.netty.LoginHandler:295 operationComplete - Going to clear pipeline
+2016-01-15 15:17:00.865 [Server-Worker[7]] DEBUG io.nadron.handlers.netty.LoginHandler:83 channelRead0 - Login attempt from /127.0.0.1:49893
+2016-01-15 15:17:03.602 [Server-Worker[7]] DEBUG io.nadron.handlers.netty.DefaultToServerHandler:53 channelInactive - Netty Channel [id: 0xbc1e44be, /127.0.0.1:49893 :> /127.0.0.1:20001] is closed.{}
+2016-01-15 15:17:03.606 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:181 onDisconnect - Received disconnect event in session. 
+2016-01-15 15:17:03.606 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:205 onException - Received exception/disconnect event in session. Going to close session
+2016-01-15 15:17:03.607 [Lane[1]] DEBUG io.nadron.communication.NettyTCPMessageSender:67 close - Going to close tcp connection in class: io.nadron.communication.NettyTCPMessageSender
+2016-01-15 15:17:24.259 [Server-Worker[9]] DEBUG io.nadron.handlers.netty.LoginHandler:260 handleGameRoomJoin - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xfcaff686, /127.0.0.1:49897 => /127.0.0.1:20001], result DefaultChannelPromise@592871dc(success)
+2016-01-15 15:17:24.260 [Server-Worker[9]] DEBUG io.nadron.handlers.netty.LoginHandler:293 operationComplete - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xfcaff686, /127.0.0.1:49897 => /127.0.0.1:20001] completed
+2016-01-15 15:17:24.261 [Server-Worker[9]] DEBUG io.nadron.handlers.netty.LoginHandler:295 operationComplete - Going to clear pipeline
+2016-01-15 15:17:24.314 [Server-Worker[9]] DEBUG io.nadron.handlers.netty.LoginHandler:83 channelRead0 - Login attempt from /127.0.0.1:49897
+2016-01-15 15:18:24.263 [Lane[1]] DEBUG com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:154 onIdleState - ping session:[id: 0xfcaff686, /127.0.0.1:49897 => /127.0.0.1:20001]
+2016-01-15 15:18:24.264 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:181 onDisconnect - Received disconnect event in session. 
+2016-01-15 15:18:24.264 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:205 onException - Received exception/disconnect event in session. Going to close session
+2016-01-15 15:18:24.265 [Lane[1]] DEBUG io.nadron.communication.NettyTCPMessageSender:67 close - Going to close tcp connection in class: io.nadron.communication.NettyTCPMessageSender
+2016-01-15 15:18:24.271 [Server-Worker[9]] DEBUG io.nadron.handlers.netty.DefaultToServerHandler:53 channelInactive - Netty Channel [id: 0xfcaff686, /127.0.0.1:49897 :> /127.0.0.1:20001] is closed.{}
+2016-01-15 15:20:14.634 [Server-Worker[11]] DEBUG io.nadron.handlers.netty.LoginHandler:260 handleGameRoomJoin - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0x32a47075, /127.0.0.1:49907 => /127.0.0.1:20001], result DefaultChannelPromise@2d359a4(success)
+2016-01-15 15:20:14.636 [Server-Worker[11]] DEBUG io.nadron.handlers.netty.LoginHandler:293 operationComplete - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0x32a47075, /127.0.0.1:49907 => /127.0.0.1:20001] completed
+2016-01-15 15:20:14.637 [Server-Worker[11]] DEBUG io.nadron.handlers.netty.LoginHandler:295 operationComplete - Going to clear pipeline
+2016-01-15 15:20:14.691 [Server-Worker[11]] DEBUG io.nadron.handlers.netty.LoginHandler:83 channelRead0 - Login attempt from /127.0.0.1:49907
+2016-01-15 15:21:14.639 [Lane[1]] DEBUG com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:154 onIdleState - ping session:[id: 0x32a47075, /127.0.0.1:49907 => /127.0.0.1:20001]
+2016-01-15 15:21:14.640 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:181 onDisconnect - Received disconnect event in session. 
+2016-01-15 15:21:14.640 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:205 onException - Received exception/disconnect event in session. Going to close session
+2016-01-15 15:21:14.640 [Lane[1]] DEBUG io.nadron.communication.NettyTCPMessageSender:67 close - Going to close tcp connection in class: io.nadron.communication.NettyTCPMessageSender
+2016-01-15 15:21:14.642 [Server-Worker[11]] DEBUG io.nadron.handlers.netty.DefaultToServerHandler:53 channelInactive - Netty Channel [id: 0x32a47075, /127.0.0.1:49907 :> /127.0.0.1:20001] is closed.{}
+2016-01-15 15:21:56.648 [Server-Worker[13]] DEBUG io.nadron.handlers.netty.LoginHandler:260 handleGameRoomJoin - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xb0c28dd3, /127.0.0.1:49913 => /127.0.0.1:20001], result DefaultChannelPromise@25c3d52c(success)
+2016-01-15 15:21:56.650 [Server-Worker[13]] DEBUG io.nadron.handlers.netty.LoginHandler:293 operationComplete - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0xb0c28dd3, /127.0.0.1:49913 => /127.0.0.1:20001] completed
+2016-01-15 15:21:56.652 [Server-Worker[13]] DEBUG io.nadron.handlers.netty.LoginHandler:295 operationComplete - Going to clear pipeline
+2016-01-15 15:21:56.707 [Server-Worker[13]] DEBUG io.nadron.handlers.netty.LoginHandler:83 channelRead0 - Login attempt from /127.0.0.1:49913
+2016-01-15 15:22:56.655 [Lane[1]] DEBUG com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:154 onIdleState - ping session:[id: 0xb0c28dd3, /127.0.0.1:49913 => /127.0.0.1:20001]
+2016-01-15 15:22:56.656 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:181 onDisconnect - Received disconnect event in session. 
+2016-01-15 15:22:56.657 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:205 onException - Received exception/disconnect event in session. Going to close session
+2016-01-15 15:22:56.657 [Lane[1]] DEBUG io.nadron.communication.NettyTCPMessageSender:67 close - Going to close tcp connection in class: io.nadron.communication.NettyTCPMessageSender
+2016-01-15 15:22:56.658 [Server-Worker[13]] DEBUG io.nadron.handlers.netty.DefaultToServerHandler:53 channelInactive - Netty Channel [id: 0xb0c28dd3, /127.0.0.1:49913 :> /127.0.0.1:20001] is closed.{}
+2016-01-15 15:23:44.201 [main] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:23:44.310 [main] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:23:44.367 [main] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:23:47.416 [Thread-2] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:23:47.419 [Thread-2] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:23:47.421 [Thread-2] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyUDPServer
+2016-01-15 15:23:47.432 [Thread-2] DEBUG io.nadron.server.netty.AbstractNettyServer:51 stopServer - In stopServer method of class: io.nadron.server.netty.NettyTCPServer
+2016-01-15 15:24:00.264 [Server-Worker[15]] DEBUG io.nadron.handlers.netty.LoginHandler:260 handleGameRoomJoin - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0x7ded32d8, /127.0.0.1:49978 => /127.0.0.1:20001], result DefaultChannelPromise@3d9eec8d(success)
+2016-01-15 15:24:00.266 [Server-Worker[15]] DEBUG io.nadron.handlers.netty.LoginHandler:293 operationComplete - Sending GAME_ROOM_JOIN_SUCCESS to channel [id: 0x7ded32d8, /127.0.0.1:49978 => /127.0.0.1:20001] completed
+2016-01-15 15:24:00.266 [Server-Worker[15]] DEBUG io.nadron.handlers.netty.LoginHandler:295 operationComplete - Going to clear pipeline
+2016-01-15 15:24:00.318 [Server-Worker[15]] DEBUG io.nadron.handlers.netty.LoginHandler:83 channelRead0 - Login attempt from /127.0.0.1:49978
+2016-01-15 15:24:00.336 [Lane[1]] DEBUG com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:97 interpretCommand - Received Player Request:{"event":"e_login","serverid":"0967FCBFA34D4e499222FEE887E739E4","fbid":"1000137","flag":0}
+2016-01-15 15:24:11.343 [Server-Worker[15]] DEBUG io.nadron.handlers.netty.DefaultToServerHandler:53 channelInactive - Netty Channel [id: 0x7ded32d8, /127.0.0.1:49978 :> /127.0.0.1:20001] is closed.{}
+2016-01-15 15:24:11.344 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:181 onDisconnect - Received disconnect event in session. 
+2016-01-15 15:24:11.344 [Lane[1]] DEBUG io.nadron.event.impl.DefaultSessionEventHandler:205 onException - Received exception/disconnect event in session. Going to close session
+2016-01-15 15:24:11.345 [Lane[1]] DEBUG io.nadron.communication.NettyTCPMessageSender:67 close - Going to close tcp connection in class: io.nadron.communication.NettyTCPMessageSender

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/lang
+    http://www.springframework.org/schema/lang/spring-lang-2.5.xsd ">
+
+	<!--  <lang:groovy id="helloWorldService" script-source="classpath:/spring/helloWorldServiceImpl.groovy"> 
+		<lang:property name="name" value="meera"/> </lang:groovy>  -->
+
+
+	<import resource="classpath:/spring/proxy-resources.xml" />
+	<import resource="classpath:/default/spring/beans-handlers.xml" />
+	<!--<import resource="classpath:/default/spring/beans-handlers-protobuf.xml" 
+		/> -->
+
+	<!-- Activates scanning of @Autowired -->
+	<context:annotation-config />
+	<!-- Activates scanning of @Service -->
+	<context:component-scan base-package="com.inkstd.badugi.game.proxy.service" />
+	<!-- The Spring application context -->
+	<!--redis缓存数据库  <bean id="springUtils" class="com.joker.game.db.util.SpringUtils" />
+     -->
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+		Server Config !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<bean id="compositeLoginProtocol"
+		class="io.nadron.handlers.netty.CompositeProtocol"
+		scope="prototype">
+		<property name="protocols">
+			<list>
+				<!-- <ref bean="defaultMessageBufferProtocol" /> -->
+				<ref bean="defaultLoginProtocol" />
+				<ref bean="httpLoginProtocol" />
+				<ref bean="stringLoginProtocol" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+		TCP SERVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<bean id="tcpServer" class="io.nadron.server.netty.NettyTCPServer"
+		destroy-method="stopServer">
+		<constructor-arg ref="tcpConfig" />
+		<constructor-arg ref="protocolMultiplexerChannelInitializer" />
+		<property name="gameAdminService" ref="gameAdminService" />
+	</bean>
+
+	<bean id="protocolMultiplexerChannelInitializer"
+		class="io.nadron.server.netty.ProtocolMultiplexerChannelInitializer">
+		<property name="idleStateCheck" value="${server.idleStateCheck}" />
+		<property name="bytesForProtocolCheck" value="4" />
+		<property name="loginProtocol" ref="compositeLoginProtocol" />
+	</bean>
+
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+		UDP SERVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<bean id="udpServer" class="io.nadron.server.netty.NettyUDPServer"
+		destroy-method="stopServer">
+		<constructor-arg ref="udpConfig" />
+		<constructor-arg ref="udpChannelInitializer" />
+		<property name="gameAdminService" ref="gameAdminService" />
+	</bean>
+	<bean id="udpChannelInitializer" class="io.nadron.server.netty.UDPChannelInitializer">
+		<property name="udpEventEncoder" ref="udpEventEncoder" />
+		<property name="upstream" ref="udpUpstreamHandler" />
+	</bean>
+
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+		HTTP SERVER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+	<bean id="httpServer" class="io.nadron.server.netty.NettyTCPServer"
+		destroy-method="stopServer">
+		<constructor-arg ref="httpConfig" />
+		<constructor-arg ref="httpChannelInitializer" />
+		<property name="gameAdminService" ref="gameAdminService" />
+	</bean>
+	<bean id="httpChannelInitializer" class="io.nadron.server.netty.HTTPChannelInitializer">
+		<property name="lookupService" ref="lookupService" />
+	</bean>
+	<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+		Custom Service !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+		
+		<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	                                 Flash
+		 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+	<bean id="flashPolicyServerChannelInitializer" 
+		class="io.nadron.server.netty.FlashPolicyServerChannelInitalizer">
+		<lookup-method name="getFlashPolicyServerHandler" bean="flashPolicyServerHandler" />
+	</bean>
+	<!-- Configure the Flash policy server. By default it runs at 843 -->
+	<bean id="flashPolicyServer" class="io.nadron.server.netty.NettyTCPServer"
+		destroy-method="stopServer">
+		<constructor-arg ref="flashConfig" />
+		<constructor-arg ref="flashPolicyServerChannelInitializer" />
+		<property name="gameAdminService" ref="gameAdminService" />
+	</bean>
+</beans>

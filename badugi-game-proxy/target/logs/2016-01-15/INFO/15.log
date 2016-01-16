@@ -1,0 +1,34 @@
+2016-01-15 15:03:57.704 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:17 main - start init...
+2016-01-15 15:13:06.239 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:17 main - start init...
+2016-01-15 15:16:36.903 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:17 main - start init...
+2016-01-15 15:16:39.046 [main] INFO  io.nadron.server.netty.ServerManagerImpl:50 start - tcpServer is running ,[port:20001]
+2016-01-15 15:16:39.048 [main] INFO  io.nadron.server.netty.ServerManagerImpl:50 start - flashPolicyServer is running ,[port:8843]
+2016-01-15 15:16:39.050 [main] INFO  io.nadron.server.netty.ServerManagerImpl:50 start - httpServer is running ,[port:8000]
+2016-01-15 15:16:39.137 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:22 main - pid=13996, mac=null, use=2143ms
+2016-01-15 15:17:00.608 [Server-Worker[6]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:17:00.622 [Server-Worker[7]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:17:00.862 [Server-Worker[7]] INFO  io.nadron.handlers.netty.LoginHandler:312 operationComplete - send start result: DefaultChannelPromise@52e2a4e7(success)
+2016-01-15 15:17:00.865 [Server-Worker[7]] INFO  com.inkstd.badugi.game.proxy.proxy.app.PlayerServiceRoom:51 onLogin - player login success...
+2016-01-15 15:17:03.604 [Lane[1]] INFO  com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:47 onDisconnect - onDisconnect , name:user@service ,sessionId:1000129
+2016-01-15 15:17:24.122 [Server-Worker[8]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:17:24.128 [Server-Worker[9]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:17:24.313 [Server-Worker[9]] INFO  io.nadron.handlers.netty.LoginHandler:312 operationComplete - send start result: DefaultChannelPromise@18157be7(success)
+2016-01-15 15:17:24.313 [Server-Worker[9]] INFO  com.inkstd.badugi.game.proxy.proxy.app.PlayerServiceRoom:51 onLogin - player login success...
+2016-01-15 15:18:24.264 [Lane[1]] INFO  com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:47 onDisconnect - onDisconnect , name:user@service ,sessionId:1000129
+2016-01-15 15:20:14.452 [Server-Worker[10]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:20:14.456 [Server-Worker[11]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:20:14.689 [Server-Worker[11]] INFO  io.nadron.handlers.netty.LoginHandler:312 operationComplete - send start result: DefaultChannelPromise@43ee539f(success)
+2016-01-15 15:20:14.690 [Server-Worker[11]] INFO  com.inkstd.badugi.game.proxy.proxy.app.PlayerServiceRoom:51 onLogin - player login success...
+2016-01-15 15:21:14.639 [Lane[1]] INFO  com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:47 onDisconnect - onDisconnect , name:user@service ,sessionId:1000129
+2016-01-15 15:21:56.454 [Server-Worker[12]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:21:56.478 [Server-Worker[13]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:21:56.704 [Server-Worker[13]] INFO  io.nadron.handlers.netty.LoginHandler:312 operationComplete - send start result: DefaultChannelPromise@64fedf17(success)
+2016-01-15 15:21:56.705 [Server-Worker[13]] INFO  com.inkstd.badugi.game.proxy.proxy.app.PlayerServiceRoom:51 onLogin - player login success...
+2016-01-15 15:22:56.656 [Lane[1]] INFO  com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:47 onDisconnect - onDisconnect , name:user@service ,sessionId:1000129
+2016-01-15 15:23:42.198 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:17 main - start init...
+2016-01-15 15:23:44.407 [main] INFO  com.inkstd.badugi.game.proxy.GameProxy:22 main - pid=13644, mac=null, use=2165ms
+2016-01-15 15:24:00.160 [Server-Worker[14]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:24:00.170 [Server-Worker[15]] INFO  io.nadron.server.netty.ProtocolMultiplexerChannelInitializer:26 initChannel - 网络事件添加
+2016-01-15 15:24:00.317 [Server-Worker[15]] INFO  io.nadron.handlers.netty.LoginHandler:312 operationComplete - send start result: DefaultChannelPromise@7ca3e6b6(success)
+2016-01-15 15:24:00.318 [Server-Worker[15]] INFO  com.inkstd.badugi.game.proxy.proxy.app.PlayerServiceRoom:51 onLogin - player login success...
+2016-01-15 15:24:11.344 [Lane[1]] INFO  com.inkstd.badugi.game.proxy.proxy.handler.PlayerSessionHandler:47 onDisconnect - onDisconnect , name:user@service ,sessionId:1000129
