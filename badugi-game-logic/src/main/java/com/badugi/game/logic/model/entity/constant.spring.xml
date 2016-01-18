@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+	<description>
+		配置全局常数，后期将转移到properties文件中，对字符串的配置更加方便
+	</description>
+	<!-- <bean id="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location"> <value>classpath*:/**/*.runtime.properties</value> 
+		</property> </bean> -->
+	<bean id="org.springframework.web.RequestSuffix" class="java.lang.String">
+		<constructor-arg value="htm" />
+	</bean>
+
+	<bean id="xusage.bastion.common.action.DefaultEntryURL" class="java.lang.String">
+		<constructor-arg
+			value="http://bastion.xusage.com:8080/xusage.bastion/index.htm" />
+	</bean>
+	<bean id="xusage.bastion.member.action.SearchMemberByPermitURL"
+		class="java.lang.String">
+		<constructor-arg
+			value="http://bastion.xusage.com:8080/xusage.bastion/SearchMemberByPermit.htm?gadget={0}&amp;callback={1}" />
+	</bean>
+	<bean id="xusage.bastion.member.action.NotifyMemberToGadgetURL"
+		class="java.lang.String">
+		<constructor-arg
+			value="http://bastion.xusage.com:8080/xusage.bastion/NotifyMemberToGadget.htm?gadget={0}" />
+	</bean>
+	<bean id="xusage.bastion.favour.action.InsertFavourURL" class="java.lang.String">
+		<constructor-arg
+			value="http://bastion.xusage.com:8080/xusage.bastion/InsertFavour.htm?gadget={0}&amp;callback={1}" />
+	</bean>
+	<bean id="xusage.bastion.empower.action.CreateEmpowerByFavourURL"
+		class="java.lang.String">
+		<constructor-arg
+			value="http://bastion.xusage.com:8080/xusage.bastion/CreateDesiredByFavour.htm?favour={0}&amp;callback={1}" />
+	</bean>
+
+</beans>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<!-- For mail settings and future properties files -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:deploy.properties</value>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:redis.properties</value>
+				<value>classpath:gamecar.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="localOverride" value="true" /><!-- false，文件会覆盖数据库配置, 
+			反之则相反覆盖 -->
+		<property name="propertiesArray">
+			<list>
+				<ref bean="compositeProperty" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="deployPropertiesConfiguration"
+		class="org.apache.commons.configuration.PropertiesConfiguration">
+		<constructor-arg index="0">
+			<value>deploy.properties</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="jdbcPropertiesConfiguration"
+		class="org.apache.commons.configuration.PropertiesConfiguration">
+		<constructor-arg index="0">
+			<value>jdbc.properties</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="redisPropertiesConfiguration"
+		class="org.apache.commons.configuration.PropertiesConfiguration">
+		<constructor-arg index="0">
+			<value>redis.properties</value>
+		</constructor-arg>
+	</bean>
+	<bean id="gameCarPropertiesConfiguration"
+		class="org.apache.commons.configuration.PropertiesConfiguration">
+		<constructor-arg index="0">
+			<value>gamecar.properties</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="compositeConfiguration" class="org.apache.commons.configuration.CompositeConfiguration">
+		<constructor-arg index="0">
+			<list>
+				<ref bean="deployPropertiesConfiguration" />
+				<ref bean="jdbcPropertiesConfiguration" />
+				<ref bean="redisPropertiesConfiguration" />
+				<ref bean="gameCarPropertiesConfiguration" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+	<!-- CREATE TABLE IF NOT EXISTS conf(`key_s` varchar(255) NOT NULL,`value_s` 
+		varchar(255) NOT NULL,`status` int)ENGINE=InnoDB DEFAULT CHARSET=utf8; -->
+	<bean id="compositeProperty" class="com.joker.game.logic.util.LogicPropertyUtil">
+		<!-- <property name="query" value="select key_s , value_s from conf_itools_rzcq 
+			where status > 0;" /> -->
+		<property name="compositeConfiguration" ref="compositeConfiguration" />
+		<property name="localOverride" value="true" /><!-- false，文件会覆盖数据库配置, 
+			反之则相反覆盖 -->
+	</bean>
+
+	<!-- i18n配置文件 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="${server.lang.path}" />
+		<property name="useCodeAsDefaultMessage" value="true" />
+	</bean>
+
+</beans>
